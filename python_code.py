@@ -91,14 +91,14 @@ X_test = sc_X.transform(X_test)
 
 
 ###########################applying LogisticRegression model############
-classifier = LogisticRegression(random_state=0)
-classifier.fit(X_train, y_train)
+LogisticReg_classifier = LogisticRegression(random_state=0)
+LogisticReg_classifier.fit(X_train, y_train)
 
-y_pred = classifier.predict(X_test)
+y_pred = LogisticReg_classifier.predict(X_test)
 
 #################################checking the accuracies#######
 cm = confusion_matrix(y_test,y_pred)
-score = classifier.score(X_test, y_test)
+score = LogisticReg_classifier.score(X_test, y_test)
 
 # print(type(cm))
 sum_of_diagonal_elements = sum(np.diagonal(cm))
@@ -137,11 +137,11 @@ print(accuracies.mean()*100)
 
 ##############DecisionTreeClassifier##########
 from sklearn.tree import DecisionTreeClassifier
-classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
-classifier.fit(X_train, y_train)
+DecisionTree_classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
+DecisionTree_classifier.fit(X_train, y_train)
 
 # Predicting the Test set results
-y_pred = classifier.predict(X_test)
+y_pred = DecisionTree_classifier.predict(X_test)
 
 # Making the Confusion Matrix
 from sklearn.metrics import confusion_matrix
