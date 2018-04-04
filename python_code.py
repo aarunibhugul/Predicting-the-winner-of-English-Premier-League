@@ -5,7 +5,6 @@ from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
-# from sklearn.SVM import SVC
 from pandas.tools.plotting import scatter_matrix
 
 dataset = pd.read_csv("Premier_League.csv")
