@@ -11,7 +11,7 @@ from pandas.tools.plotting import scatter_matrix
 dataset = pd.read_csv("Premier_League.csv")
 
 ############################# Data Cleaning ######################
-#checking is any column contains null values
+#checking if any column contains null values
 list_of_empty_columns = []
 for c in dataset.columns:
     # print("Column name: ",c + " Clean?:",dataset[c].isnull().any())
