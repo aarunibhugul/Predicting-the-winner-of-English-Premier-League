@@ -3,8 +3,9 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.cross_validation import train_test_split
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import confusion_matrix
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.tree import DecisionTreeClassifie
+from sklearn.metrics import confusion_matrix
 # from sklearn.SVM import SVC
 from pandas.tools.plotting import scatter_matrix
 
@@ -140,7 +141,7 @@ print("cross_val_score : ",accuracies.mean()*100)
 
 
 ##############DecisionTreeClassifier##########
-from sklearn.tree import DecisionTreeClassifier
+
 decision_tree_classifier = DecisionTreeClassifier(criterion = 'entropy', random_state = 0)
 decision_tree_classifier.fit(X_train, y_train)
 
@@ -149,7 +150,7 @@ y_pred = decision_tree_classifier.predict(X_test)
 
 
 # Making the Confusion Matrix
-from sklearn.metrics import confusion_matrix
+
 cm = confusion_matrix(y_test, y_pred)
 cm = confusion_matrix(y_test,y_pred)
 sum_of_diagonal_elements = sum(np.diagonal(cm))
@@ -169,7 +170,6 @@ print("cross_val_score: ",accuracies.mean()*100)
 
 ####################RandomForestClassifier#############
 
-from sklearn.ensemble import RandomForestClassifier
 random_forest_classifier = RandomForestClassifier(n_estimators = 10, criterion = 'entropy', random_state = 0)
 random_forest_classifier.fit(X_train, y_train)
 
